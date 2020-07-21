@@ -1,0 +1,13 @@
+Git Commands : 
+
+1. Create new directory - mkdir <folder name - GitCommands>
+2. Change Directory - cd GitCommands
+3. Create a new empty file - touch commands
+4. Open the file - open -e commands
+5. Write all commands in this file, Save and Close
+6. Stage all files - git add .
+7. Commit - git commit -m "Initial File"
+8. Let it know the exact repo where we want to push the code - git remote add origin <URL>
+9. Create and checkout new branch - git checkout -b new_branch
+10. Checkout master so that we can delete previous branch - git checkout master
+11. Delete the newly created branch  - git branch -d new_branch
