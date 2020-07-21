@@ -2,16 +2,19 @@ package com;
 
 import java.util.regex.Pattern;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class FormService {
 	
 	@GetMapping("/firstname")
-	public String checkFirstname() {
-		String pattern = "^[A-Z][a-z]*";
-		Pattern p = Pattern.compile(pattern);
-		return p.toString();
+	public String checkFirstname(@RequestParam String name) {
+		return name;
+////	String pattern = "^[A-Z][a-z]*";
+////	Pattern p = Pattern.compile(pattern);
+////	return p.toString();
+//		//return "Saumya";
 	}
 	
 //	@GetMapping("/lastname")
@@ -25,10 +28,11 @@ public class FormService {
 //	}
 //	
 	@GetMapping("/email")
-	public String checkEmail() {
-		String pattern = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
-		Pattern p = Pattern.compile(pattern);
-		return p.toString();
+	public String checkEmail(@RequestParam String email) {
+		return email;
+//		String pattern = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
+//		Pattern p = Pattern.compile(pattern);
+//		return p.toString();
 	}
 //	
 //	@GetMapping("/password")
