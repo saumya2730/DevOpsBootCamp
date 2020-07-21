@@ -11,3 +11,7 @@ Git Commands :
 9. Create and checkout new branch - git checkout -b new_branch
 10. Checkout master so that we can delete previous branch - git checkout master
 11. Delete the newly created branch  - git branch -d new_branch
+12. To save changes when they are not in the state of commit - git stash
+13. To get history of logs - git log
+14. To Copy and Store a set of commit outside of our repository - git rebase
+15. To revert back previous version - git revert
