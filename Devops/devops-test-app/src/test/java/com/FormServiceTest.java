@@ -3,7 +3,6 @@ package com;
 
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -55,14 +54,14 @@ public class FormServiceTest {
 //		//Assertions.assertEquals(fs.checkFirstname(), "saumya@12");
 //		
 //	}
-	
+//	
 	@Test
 	public void test6() {
 		Assertions.assertEquals(fs.checkEmail("saumya.saxena2730@gmail.com"), "saumya.saxena2730@gmail.com");
 		//Assertions.assertEquals(fs.checkEmail(), "saumya@gmail.com");
 		
 	}
-//	
+	
 //	@Test
 //	public void test7() {
 //		Assertions.assertEquals(fs.checkEmail("saumya.saxena2730@gmail.com"), "saumya123@gmail.com");
@@ -125,5 +124,70 @@ public class FormServiceTest {
 //		//Assertions.assertEquals(fs.checkEmail(), "saumya123@tcs.com");
 //		
 //	}
+//	
+	
+	@Test
+	public void test16() {
+		Assertions.assertEquals(fs.checkLastname("Saxena"), "Saxena");
+		
+	}
+	
+//	@Test
+//	public void test17() {
+//		Assertions.assertEquals(fs.checkLastname("Saxena"), "saxena");
+//		
+//	}
+//	
+//	@Test
+//	public void test18() {
+//		Assertions.assertEquals(fs.checkLastname("Saxena"), "Saxena12");
+//		
+//	}
+//	
+//	@Test
+//	public void test19() {
+//		Assertions.assertEquals(fs.checkLastname("Saxena"), "Saxena..-");
+//		
+//	}
+//	
+//	@Test
+//	public void test20() {
+//		Assertions.assertEquals(fs.checkLastname("Saxena"), "saxena23");
+//		
+//	}
+//	
+//	@Test
+//	public void test21() {
+//		Assertions.assertEquals(fs.checkLastname("Saxena"), "saxena..23");
+//		
+//	}
+//	
+	@Test
+	public void test22() {
+		Assertions.assertEquals(fs.checkUsername("saumya2730"), "saumya2730");
+		
+	}
+	
+//	@Test
+//	public void test23() {
+//		Assertions.assertEquals(fs.checkUsername("saumya2730"), "saumya..2730");
+//		
+//	}
+//	
+//	@Test
+//	public void test24() {
+//		Assertions.assertEquals(fs.checkUsername("saumya2730"), "--2730");
+//		
+//	}
+//	
+//	@Test
+//	public void test25() {
+//		Assertions.assertEquals(fs.checkUsername("saumya2730"), "2134");
+//		
+//	}
+	
+	
+	
+	
 	
 }
