@@ -7,6 +7,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.FormService;
 
+
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
 public class FormServiceTest {
@@ -15,11 +16,13 @@ public class FormServiceTest {
 
 	@Test
 	public void test1() {
+		FormService fs = new FormService();
 		Assertions.assertEquals(fs.checkFirstname(), "Saumya");
 	}
 	
 	@Test
 	public void test2() {
+		FormService fs = new FormService();
 		Assertions.assertEquals(fs.checkFirstname(), "saumya");
 		
 	}
