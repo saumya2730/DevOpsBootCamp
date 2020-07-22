@@ -1,12 +1,6 @@
-FROM openjdk:8-jdk-alpine
+FROM tomcat:latest
 
-EXPOSE 8888
-
-ARG WAR_FILE=/target/*.war
-
-COPY ${WAR_FILE} app.war
-
-RUN echo "Creation of your docker image"
-
-MAINTAINER "learner2730@gmail.com"
+ADD ./target/war-test.war /usr/local/tomcat/webapps/
+CMD chmod +x /usr/local/tomcat/bin/catalina.sh
+CMD ["catalina.sh", "run"]
 

@@ -1,15 +1,16 @@
 version: '3'
 services:
         web:
-                image: webapp
+                build: .
                 ports:
                   - "9990:8080"
         db:
                 image: mysql
                 ports:
-                        - "3306:3306"
+                        - "9000:3306"
                 environment:
                         - MYSQL_ROOT_PASSWORD=password
                         - MYSQL_USER=user
                         - MYSQL_PASSWORD=password
                         - MYSQL_DATABASE=demodb
+ 
