@@ -1,14 +1,13 @@
 FROM openjdk:8-jdk-alpine
 
-EXPOSE 8080
+EXPOSE 8888
 
-ARG JAR_FILE=/target/*.jar
+ARG WAR_FILE=/target/*.war
 
-COPY ${JAR_FILE} app.jar
+COPY ${WAR_FILE} app.war
 
 RUN echo "Creation of your docker image is in progress"
 
 MAINTAINER "learner2730@gmail.com"
 
-ENTRYPOINT ["java", "-jar", "app.jar"]
 
