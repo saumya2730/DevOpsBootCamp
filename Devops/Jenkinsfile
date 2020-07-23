@@ -19,7 +19,19 @@ node {
     stage('run') {
         def dockerHome = tool name: 'Docker'
         def dockerCMD = "${dockerHome}/usr/local/bin/docker"
-        sh "${dockerCMD} run -p 8888:8082 saumya2730/devops-test:1.0"
+        sh "${dockerCMD} run -p 8888:8080 -d saumya2730/devops-test:1.0"
     }
+    
+    stage('docker push') {
+        def dockerHome = tool name: 'Docker'
+        def dockerCMD = "${dockerHome}/usr/local/bin/docker"
+        withCredentials([string(credentialsId: 'creds', variable: 'docker_password')]) {
+            sh "${dockerCMD} login -u saumya2730 -p ${docker_password}"
+            }
+        sh "${dockerCMD} push saumya2730/devops-test:1.0"
+    }
+    
+    
+    
      
 }
