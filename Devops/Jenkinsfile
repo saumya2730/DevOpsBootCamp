@@ -1,0 +1,25 @@
+node {
+    stage('git checkout') {
+        git credentialsId: 'git-cred', url: 'https://github.com/saumya2730/devopsfinal.git'
+    }
+    
+    stage('code build & test') {
+        //sh 'mvn clean package'
+        def maven_home = tool name: 'maven-3', type: 'maven'
+        def maven_cmd = "${maven_home}/bin/mvn"
+        sh "${maven_cmd} clean package"
+    }
+    
+    stage('docker build') {
+        def dockerHome = tool name: 'Docker'
+        def dockerCMD = "${dockerHome}/usr/local/bin/docker"
+        sh "${dockerCMD} build -t saumya2730/devops-test:1.0 ."
+    }
+    
+    stage('run') {
+        def dockerHome = tool name: 'Docker'
+        def dockerCMD = "${dockerHome}/usr/local/bin/docker"
+        sh "${dockerCMD} run -p 8888:8082 saumya2730/devops-test:1.0"
+    }
+     
+}
