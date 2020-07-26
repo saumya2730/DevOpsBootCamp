@@ -31,7 +31,15 @@ node {
         sh "${dockerCMD} push saumya2730/devops-test:1.0"
     }
     
-    
+    stage('push to pcf') {
+     
+    //sh '/usr/local/bin/cf login -u saumya.saxena2730@gmail.com -p Sausasuk@2730 -o devops-test-org' 
+    withCredentials([usernamePassword(credentialsId: 'pcf_id', passwordVariable: 'pass', usernameVariable: 'user')]) {
+    // some block
+    sh '/usr/local/bin/cf login -u saumya.saxena2730@gmail.com -p ${pass} -o devops-test-org'
+    }    
+    sh '/usr/local/bin/cf push docker-img1 --docker-image saumya270/devops-test:1.0 --no-start'
+}
     
      
 }
